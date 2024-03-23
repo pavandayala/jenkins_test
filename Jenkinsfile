@@ -7,7 +7,10 @@ pipeline{
   }
   stages{
     stage('Test'){
-      runMATLABCommand("ver")
+      steps{
+        def out = runMATLABCommand("ver")
+        echo("Output ${out}")
+      }
     }
   }
 }
